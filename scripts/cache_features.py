@@ -43,8 +43,8 @@ def main():
     ap.add_argument("--start", type=int, default=0)
     ap.add_argument("--points-per-side", type=int, default=16)
     ap.add_argument("--eval-res", type=int, default=256)
-    ap.add_argument("--cache", default="cache")
-    ap.add_argument("--ade-root", default="data/ADEChallengeData2016")
+    ap.add_argument("--cache", default=os.environ.get("PMX_CACHE", "cache_mc"))
+    ap.add_argument("--ade-root", default=os.environ.get("PMX_ADE_ROOT", "data/ADEChallengeData2016"))
     ap.add_argument("--clip", default="openai/clip-vit-large-patch14")
     ap.add_argument("--encoder", default="context", choices=["bbox", "context"],
                     help="region encoder: 'bbox' = original weak masked-crop; "
@@ -54,6 +54,8 @@ def main():
     import torch
     from PIL import Image
     dev = "cuda" if torch.cuda.is_available() else "cpu"
+    if os.path.exists(os.path.join(a.cache, "qfeat.npy")):
+        ap.error("Dense-CLIP cache detected; choose a separate masked-crop --cache directory.")
     outdir = os.path.join(a.cache, "train" if a.split == "train" else "val")
     os.makedirs(outdir, exist_ok=True)
 

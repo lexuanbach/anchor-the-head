@@ -1,7 +1,9 @@
 import os, sys, glob, argparse, numpy as np, torch, torch.nn.functional as F
 from PIL import Image
-SCLIP=os.environ.get('PMX_SCLIP','SCLIP'); sys.path.append(SCLIP)
+SCLIP=os.environ.get('PMX_SCLIP','SCLIP'); sys.path.insert(0, os.path.abspath(SCLIP))
 import clip
+if not os.path.abspath(clip.__file__).startswith(os.path.abspath(SCLIP) + os.sep):
+    raise ImportError("Expected SCLIP's modified clip module. Set PMX_SCLIP to the pinned checkout.")
 from prompts.imagenet_template import openai_imagenet_template
 
 ADE=os.environ.get('PMX_ADE_ROOT','data/ADEChallengeData2016')

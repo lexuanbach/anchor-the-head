@@ -3,7 +3,7 @@
 # trained on SEEN patches only; novel classes get a temperature from their own text (the map generalises).
 # If it collapses too, the seen-only-supervision pattern holds here as well; if not, a positive trained method exists. 5 splits, ADE dense-CLIP cache.
 import os,glob,numpy as np,torch,torch.nn as nn,torch.nn.functional as F,math,json
-dev='cuda';CACHE=os.environ.get('PMX_CACHE','cache');NCLS=150;LS=40.0;NOVEL=30;SEEDS=5;BINS=15
+dev='cuda';CACHE=os.environ.get('PMX_CACHE','cache_dense');NCLS=150;LS=40.0;NOVEL=30;SEEDS=5;BINS=15
 qfeat=torch.from_numpy(np.load(f'{CACHE}/qfeat.npy')).float().to(dev)   # [150,512] class text embeddings
 def load(sp):
     out=[]

@@ -24,7 +24,7 @@
 import os, glob, json, math, numpy as np, torch, torch.nn as nn, torch.nn.functional as F
 
 dev = 'cuda'
-CACHE = os.environ.get('PMX_CACHE', 'cache')
+CACHE = os.environ.get('PMX_CACHE', 'cache_dense')
 NCLS, LS, BINS = 150, 40.0, 15
 NOVEL = int(os.environ.get('PMX_NOVEL', 30))
 SEEDS = int(os.environ.get('PMX_SEEDS', 5))

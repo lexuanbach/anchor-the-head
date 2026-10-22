@@ -70,7 +70,10 @@ def main():
         raise SystemExit(f"ERROR: functions not found in {src_path}: {missing}")
 
     chunks.sort()
-    out = HEADER + "\n\n".join(body.rstrip() for _, body in chunks) + "\n"
+    license_path = os.path.join(a.lposs, "LICENSE")
+    with open(license_path) as fh:
+        notice = "".join(("# " + line.rstrip("\n")).rstrip() + "\n" for line in fh) + "\n"
+    out = notice + HEADER + "\n\n".join(body.rstrip() for _, body in chunks) + "\n"
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     with open(a.out, "w") as fh:
         fh.write(out)

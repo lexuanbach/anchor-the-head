@@ -1,0 +1,4 @@
+# Optional LPOSS dependencies for the reported CUDA 12 environment.
+# Install with requirements.txt on a CUDA host; not needed for Tier A.
+faiss-cpu
+cupy-cuda12x

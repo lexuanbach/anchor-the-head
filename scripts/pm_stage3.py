@@ -3,7 +3,7 @@
 # (b) a logit-space trust-region trained head (does collapse persist?), (c) AURC / risk-coverage, and
 # per-pixel ECE (already the unit). 5 seen/novel splits on ADE20K-150 dense-CLIP cache.
 import os,glob,numpy as np,torch,torch.nn.functional as F,math,json
-dev='cuda';CACHE=os.environ.get('PMX_CACHE','cache');NCLS=150;LS=40.0;NOVEL=30;SEEDS=5;BINS=15
+dev='cuda';CACHE=os.environ.get('PMX_CACHE','cache_dense');NCLS=150;LS=40.0;NOVEL=30;SEEDS=5;BINS=15
 def load(split):
     out=[]
     for f in sorted(glob.glob(f'{CACHE}/{split}/*.npz')):

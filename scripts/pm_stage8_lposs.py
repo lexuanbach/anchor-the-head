@@ -57,7 +57,7 @@ faiss.StandardGpuResources = _DummyGpuRes
 print('[shim] faiss.knn_gpu -> exact torch top-k; StandardGpuResources -> no-op', flush=True)
 
 dev = 'cuda'
-CACHE = os.environ.get('PMX_CACHE', 'dcache')
+CACHE = os.environ.get('PMX_CACHE', 'cache_dense')
 ADE = os.environ.get('PMX_ADE_ROOT', 'data/ADEChallengeData2016')
 NCLS, LS, BINS = 150, 40.0, 15
 NOVEL = int(os.environ.get('PMX_NOVEL', 30))

@@ -1,7 +1,6 @@
 """Persist an auditable provenance record for the LPOSS propagation we run verbatim.
 
-`scripts/lposs_extract.py` only PRINTS the per-function SHA-256 at extraction time, so a reader of
-the artifact had no way to check the "verbatim / SHA-verified" claim. This script writes the
+This script writes the per-function SHA-256
 digests to `results/extended/lposs_provenance.json` and, given an upstream checkout (or a downloaded
 copy of the single source file), verifies them against the authors' released code.
 
@@ -12,7 +11,6 @@ it is the digest that survives our extractor's `.rstrip()` when it writes lposs_
 is the one that can be compared across the upstream file and our extracted module.
 
 Usage:
-  python3 scripts/lposs_provenance.py                               # digest our extracted module
   python3 scripts/lposs_provenance.py --upstream-file /tmp/lposs_eval.py
   python3 scripts/lposs_provenance.py --lposs /path/to/LPOSS        # upstream checkout
 """
@@ -68,6 +66,9 @@ def main():
                     help="how the upstream copy was obtained (URL or checkout), recorded verbatim")
     ap.add_argument("--out", default=os.path.join(ROOT, "results", "extended", "lposs_provenance.json"))
     a = ap.parse_args()
+
+    if not (a.lposs or a.upstream_file):
+        ap.error("Provide --lposs or --upstream-file to verify against upstream before writing provenance.")
 
     ours = func_digests(a.module)
     rec = {

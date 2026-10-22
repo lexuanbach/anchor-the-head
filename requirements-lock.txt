@@ -1,4 +1,4 @@
-# Exact environment for the submitted ProtoMask-Set GPU runs (one H100).
+# Exact environment for the reported GPU runs (one H100).
 # Python 3.10.12. torch/torchvision/scipy were NVIDIA NGC 24.07 container builds;
 # the public PyPI pins below reproduce the reported results. Tier A (table/figure
 # regeneration) is insensitive to these versions and needs only numpy.

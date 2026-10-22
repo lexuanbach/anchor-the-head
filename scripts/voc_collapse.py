@@ -2,10 +2,12 @@
 # PASCAL VOC2012 (20 object classes, different domain from ADE20K-150 scenes). Self-contained.
 import os, sys, glob, numpy as np, torch, torch.nn.functional as F, math, json
 from PIL import Image
-SCLIP=os.environ.get('PMX_SCLIP','SCLIP'); sys.path.append(SCLIP)
+SCLIP=os.environ.get('PMX_SCLIP','SCLIP'); sys.path.insert(0, os.path.abspath(SCLIP))
 import clip
+if not os.path.abspath(clip.__file__).startswith(os.path.abspath(SCLIP) + os.sep):
+    raise ImportError("Expected SCLIP's modified clip module. Set PMX_SCLIP to the pinned checkout.")
 from prompts.imagenet_template import openai_imagenet_template
-dev='cuda'; VOC=os.environ.get('PMX_VOC_ROOT','data/VOCdevkit/VOC2012'); NAMES=os.environ.get('PMX_VOC_NAMES',os.path.join(SCLIP,'configs/cls_voc20.txt')); CACHE=os.environ.get('PMX_CACHE','cache')
+dev='cuda'; VOC=os.environ.get('PMX_VOC_ROOT','data/VOCdevkit/VOC2012'); NAMES=os.environ.get('PMX_VOC_NAMES',os.path.join(SCLIP,'configs/cls_voc20.txt')); CACHE=os.environ.get('PMX_CACHE','cache_voc')
 NCLS=20; NOVEL=6; SEEDS=5; BINS=15; LS=40.0
 MEAN=torch.tensor([0.48145466,0.4578275,0.40821073]).view(1,3,1,1); STD=torch.tensor([0.26862954,0.26130258,0.27577711]).view(1,3,1,1)
 def mean(x): return sum(x)/len(x)

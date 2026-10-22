@@ -19,7 +19,7 @@
 import os, glob, json, numpy as np, torch, torch.nn as nn, torch.nn.functional as F
 
 dev = 'cuda'
-ADE_CACHE = os.environ.get('PMX_CACHE', 'cache')
+ADE_CACHE = os.environ.get('PMX_CACHE', 'cache_dense')
 COCO_CACHE = os.environ.get('PMX_COCO_CACHE', 'coco_cache')
 OUT = os.environ.get('PMX_OUT', ADE_CACHE)
 NCLS_ADE, NCLS_COCO, LS, BINS = 150, 171, 40.0, 15

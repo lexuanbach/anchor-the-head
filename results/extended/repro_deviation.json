@@ -51,7 +51,7 @@
         }
       ],
       "not_comparable_nonfinite": [],
-      "note": "Deviation is confined to the TRAINED decoder row (stochastic 12-epoch training); every parameter-free row is bit-identical."
+      "note": "Deviation is confined to the TRAINED decoder row (stochastic 12-epoch training); the compared fitted-temperature and smoothing rows agree within the recorded tolerance."
     },
     {
       "family": "dense-CLIP VOC2012 (tab_real_voc)",
@@ -380,5 +380,6 @@
       "not_comparable_nonfinite": [],
       "note": "Both records are on the SAME rebuilt 1623-image cache; this is run-to-run variance of the trained decoder / diffusion sweep, not cache-to-cache."
     }
-  ]
+  ],
+  "non_head_rows_note": "The legacy parameter_free key includes fitted global/per-class temperatures; only rows with rebuild records are compared."
 }

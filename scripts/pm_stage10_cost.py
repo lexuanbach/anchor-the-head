@@ -4,7 +4,7 @@
 import os, glob, json, time, numpy as np, torch, torch.nn as nn, torch.nn.functional as F
 
 dev = 'cuda'
-CACHE = os.environ.get('PMX_CACHE', 'cache')
+CACHE = os.environ.get('PMX_CACHE', 'cache_dense')
 OUT = os.environ.get('PMX_OUT', CACHE)
 NCLS, LS = 150, 40.0
 

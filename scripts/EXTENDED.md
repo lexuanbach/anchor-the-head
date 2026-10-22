@@ -26,9 +26,12 @@ against an upstream checkout with `python3 scripts/lposs_provenance.py --lposs /
 `pm_stage8_lposs.py` shims only faiss.knn_gpu (exact torch top-k, since faiss wheels lack sm_90
 kernels) and never edits the extracted code.
 
-`repro_deviation.py` derives the reproduction bound from the shipped records: every parameter-free
-dense-regime row agrees to within 0.05, and the stochastically trained decoder rows to within 0.85
+`repro_deviation.py` derives the reproduction bound from the shipped records: the compared uncalibrated, fitted-temperature and smoothing
+dense-regime rows agrees to within 0.05, and the stochastically trained decoder rows to within 0.85
 (largest single value: VOC novel-class ECE 16.69 vs 17.54, ADE20K maximum 0.40). AURC is NaN in the
 rebuild for the two trained-decoder rows and is excluded.
 
 The masked-crop regime rebuild JSONs are prefixed `mc_`.
+
+This comparison does not include an independent LPOSS or alignment/frontier/diagnostic/transfer rebuild.
+See REPRODUCE.md for the DINO-proxy audit commands and output locations.

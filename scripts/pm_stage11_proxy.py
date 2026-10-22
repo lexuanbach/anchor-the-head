@@ -20,7 +20,7 @@ import torch.nn.functional as F
 from PIL import Image
 
 dev = 'cuda'
-CACHE = os.environ.get('PMX_CACHE', 'cache')
+CACHE = os.environ.get('PMX_CACHE', 'cache_dense')
 OUTC = os.environ.get('PMX_PROXY_CACHE', 'cache_proxy')
 ADE = os.environ.get('PMX_ADE_ROOT', 'data/ADEChallengeData2016')
 NCLS, LS = 150, 40.0

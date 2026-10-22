@@ -2,11 +2,15 @@
 # Reports val mIoU and caches per-image patch (feature, gt) for the calibration/collapse study.
 import os, sys, glob, numpy as np, torch, torch.nn.functional as F
 from PIL import Image
-SCLIP=os.environ.get('PMX_SCLIP','SCLIP'); sys.path.append(SCLIP)
+SCLIP=os.environ.get('PMX_SCLIP','SCLIP'); sys.path.insert(0, os.path.abspath(SCLIP))
 import clip
+if not os.path.abspath(clip.__file__).startswith(os.path.abspath(SCLIP) + os.sep):
+    raise ImportError("Expected SCLIP's modified clip module. Set PMX_SCLIP to the pinned checkout.")
 from prompts.imagenet_template import openai_imagenet_template
 ADE=os.environ.get('PMX_ADE_ROOT','data/ADEChallengeData2016'); NAMES=os.environ.get('PMX_ADE_NAMES',os.path.join(SCLIP,'configs/cls_ade20k.txt'))
-OUT=os.environ.get('PMX_CACHE','cache'); os.makedirs(OUT,exist_ok=True)
+OUT=os.environ.get('PMX_CACHE','cache_dense'); os.makedirs(OUT,exist_ok=True)
+if os.path.exists(os.path.join(OUT, 'text_protos.npy')):
+    raise ValueError('Masked-crop cache detected; choose a separate PMX_CACHE for dense CLIP.')
 MEAN=torch.tensor([0.48145466,0.4578275,0.40821073]).view(1,3,1,1)
 STD =torch.tensor([0.26862954,0.26130258,0.27577711]).view(1,3,1,1)
 dev='cuda'

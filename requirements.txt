@@ -1,11 +1,11 @@
 # ProtoMask-Set dependencies.
-# Tiers A-B (table regeneration + CPU calibration study) need only numpy (+ matplotlib for figures).
+# Tier A + masked-crop Tier B need only numpy (+ matplotlib for figures).
 # Tier C (rebuild caches / dense-CLIP / VOC from raw data) additionally needs torch + transformers,
-# and for the dense-CLIP regime the OpenAI `clip` package and the external SCLIP checkout (see MODELS.md).
+# and for the dense-CLIP regime the modified `clip` module in the external SCLIP checkout (see MODELS.md).
 # Versions are floors known to work, not exact pins; the original runs used a single H100 environment.
 
 numpy>=1.24
-matplotlib>=3.7          # figures only (calib_ece.png, collapse_law)
+matplotlib>=3.7          # figures only (calib_ece.png, frontier and drift)
 
 # --- Tier C only (GPU) ---
 torch>=2.0
@@ -14,6 +14,7 @@ transformers>=4.38       # frozen openai/clip-vit-large-patch14 + facebook/sam-v
 pillow>=9.0
 scipy>=1.10              # boundary edges in cache_features (core.py binary_erosion/dilation)
 
-# dense-CLIP (SCLIP CSA) regime, Tier C:
-#   pip install git+https://github.com/openai/CLIP.git   # provides the `clip` package
-#   git clone the SCLIP repo and point PMX_SCLIP at it    # provides prompts/ + configs/
+# SCLIP's modified clip module is imported from PMX_SCLIP (see MODELS.md).
+ftfy>=6.1
+regex>=2023.0
+# LPOSS has additional CUDA dependencies: see requirements-lposs.txt.

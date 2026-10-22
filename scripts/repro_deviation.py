@@ -1,9 +1,7 @@
 """Compute the ACTUAL maximum deviation between the published result records and the
 independent from-scratch rebuild records, per family of tables.
 
-Motivation: the manuscript claimed "reproduced to within 0.33". That bound appeared in no
-released record. This script derives the bound from the shipped JSONs so the number in the
-paper is traceable. Pure file IO, no models, no GPU.
+Derives bounds from the shipped JSONs. Pure file IO, no models, no GPU.
 
 Run: python3 scripts/repro_deviation.py          # writes results/extended/repro_deviation.json
 """
@@ -83,7 +81,7 @@ def main():
         "results/extended/metrics_regime.json", "results/rebuild/metrics_regime.json",
         subkey="summary",
         note="Deviation is confined to the TRAINED decoder row (stochastic 12-epoch training); "
-             "every parameter-free row is bit-identical."))
+             "the compared fitted-temperature and smoothing rows agree within the recorded tolerance."))
     # --- dense-CLIP regime, PASCAL VOC: backs tab_real_voc (transcribed from results/metrics_voc.json)
     rows.append(compare(
         "dense-CLIP VOC2012 (tab_real_voc)",
@@ -129,7 +127,8 @@ def main():
             max(r["max_abs_deviation"] for r in mc), 4),
         "families": rows,
     }
-    # verify the "parameter-free rows are identical" sub-claim rather than asserting it
+    out["non_head_rows_note"] = "The legacy parameter_free key includes fitted global/per-class temperatures; only rows with rebuild records are compared."
+    # Compare non-head rows, including fitted temperatures (legacy schema calls these parameter_free).
     pf_max = 0.0
     for pub, reb in (("results/extended/metrics_regime.json", "results/rebuild/metrics_regime.json"),
                      ("results/metrics_voc.json", "results/rebuild/metrics_voc.json")):
@@ -148,7 +147,7 @@ def main():
         print(f"  {r['family']:48s} max|d|={r['max_abs_deviation']:.2f} at {r['max_at']}"
               f"  ({r['published_value']} -> {r['rebuild_value']})")
     print(f"\ndense regime max |deviation|          = {out['dense_regime_max_abs_deviation']}")
-    print(f"dense regime parameter-free rows max = "
+    print(f"dense regime non-head rows max        = "
           f"{out['dense_regime_parameter_free_rows_max_abs_deviation']}")
     print(f"masked-crop rebuilt-cache max        = "
           f"{out['masked_crop_rebuilt_cache_max_abs_deviation']}")

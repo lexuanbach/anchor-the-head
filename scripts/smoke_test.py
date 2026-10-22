@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import os
 import sys
+import tempfile
 
 import numpy as np
 
@@ -67,10 +68,11 @@ def main():
         res[nm] = m
         print(f"{nm} OK:", m)
     res["mask_independent_clip"] = res["baseline"]
-    os.makedirs("/tmp/smoke_results/tables", exist_ok=True)
-    run._write_tables(res, "/tmp/smoke_results")
-    assert os.path.exists("/tmp/smoke_results/tables/tab_main.tex")
-    assert os.path.exists("/tmp/smoke_results/tables/tab_ablation.tex")
+    with tempfile.TemporaryDirectory(prefix="anchor-head-smoke-") as out_dir:
+        os.makedirs(os.path.join(out_dir, "tables"), exist_ok=True)
+        run._write_tables(res, out_dir)
+        assert os.path.exists(os.path.join(out_dir, "tables", "tab_main.tex"))
+        assert os.path.exists(os.path.join(out_dir, "tables", "tab_ablation.tex"))
     print("SMOKE_OK: model + metrics + train/eval + table writer all run end-to-end")
 
 

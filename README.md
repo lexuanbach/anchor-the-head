@@ -8,6 +8,9 @@ segmentation stacks (SAM+CLIP masked crops and training-free dense CLIP). Seen-o
 unanchored corrections sharply reduce novel-class IoU. Anchoring the same head to the frozen logits,
 or making the correction class-symmetric, preserves it. No foundation model is fine-tuned.
 
+The package name `protomask`, the name ProtoMask-Set, and `PMX_*` variables are retained
+implementation identifiers. They refer to the correction pipelines evaluated in this paper.
+
 ## Main results
 
 - On the dense-CLIP stack (14.5 mIoU on ADE20K), a seen-only residual head takes novel-class IoU from
@@ -16,18 +19,20 @@ or making the correction class-symmetric, preserves it. No foundation model is f
   raising mIoU from 14.5 to 15.8. A trust region at tau=0.5 recovers 14.6. Recovery is monotone in
   the anchor strength. Anchored heads still predict fewer novel pixels than the frozen base
   (7-11% vs 15.6%).
-- Alignment drift tracks novel-class retention across 38 class-specific settings in 13 families
+- Alignment drift tracks novel-class retention across 38 measured class-specific settings (32 distinct correction configurations) in 13 families
   (pointwise r=-0.90, cluster-bootstrap CI [-0.96,-0.74], family-level r=-0.65). Class-symmetric
   corrections retain novel classes even at large drift.
-- A global temperature is the best calibrator (ECE 27.2 to 8.7 on dense CLIP) and leaves novel-class
+- Among in-domain corrections retaining novel-class IoU, global temperature is the best calibrator (ECE 27.2 to 8.7 on dense CLIP) and leaves novel-class
   IoU unchanged.
 - The pattern replicates on five bases: ADE20K masked-crop and dense-CLIP, LPOSS- and
   DINO-proxy-corrected dense CLIP, and PASCAL VOC.
 
-Every reported number comes from a per-run JSON under `results/`. `results/manifest.json` maps each
+Numerical result tables are backed by JSON records under `results/`. `results/manifest.json` maps each
 table to its source JSON and script.
 
 ## Contents
+
+- `supplementary.pdf`: supplementary protocols, results and correction specifications.
 
 - `src/protomask/`: frozen SAM+CLIP core (mask proposals, region and text embeddings, proposal graph,
   painting, metrics) and the trained graph decoder.

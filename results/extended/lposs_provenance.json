@@ -10,7 +10,7 @@
     "commit": "4d869a8918b798bf1053cc3aeb527e7aef93f77a"
   },
   "extracted_module": "scripts/lposs_core_auto.py",
-  "extracted_module_sha256": "d484a437d72e2e6ea017da99a860824355bd94f1bc172efce5773584138a5063",
+  "extracted_module_sha256": "55dd72bf066ababbf72eb02feb6b318522fac9d12abd12e421a3b6d3e9328593",
   "digest_definition": "SHA-256 over the function's source lines as written; sha256_rstrip is the same text with trailing whitespace stripped (the form our extractor emits, and the form to compare across files).",
   "functions": {
     "normalize_connection_graph": {
@@ -82,5 +82,6 @@
     "get_lposs_laplacian": true,
     "dfs_search": true,
     "perform_lp": true
-  }
+  },
+  "license": "licenses/LPOSS-LICENSE"
 }

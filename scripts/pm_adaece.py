@@ -1,7 +1,7 @@
 # Adaptive-bin and class-balanced ECE: confirm the calibration ranking is not a
 # binning artifact. Recompute ECE three ways for uncal / global-T / diffusion on the cached dense-CLIP logits.
 import os,glob,numpy as np,torch,torch.nn.functional as F,json
-dev='cuda';CACHE=os.environ.get('PMX_CACHE','cache');NCLS=150;LS=40.0;NOVEL=30;SEEDS=5;BINS=15
+dev='cuda';CACHE=os.environ.get('PMX_CACHE','cache_dense');NCLS=150;LS=40.0;NOVEL=30;SEEDS=5;BINS=15
 qfeat=torch.from_numpy(np.load(f'{CACHE}/qfeat.npy')).float().to(dev)
 def load(sp):
     out=[]
