@@ -1,0 +1,86 @@
+{
+  "_comment": "Provenance of the LPOSS propagation executed by scripts/pm_stage8_lposs.py. Regenerate with scripts/lposs_provenance.py; verify against upstream with --lposs /path/to/LPOSS.",
+  "generated_utc": "2026-08-21T11:29:26Z",
+  "upstream": {
+    "repo": "https://github.com/vladan-stojnic/LPOSS",
+    "paper": "Stojnic, Kalantidis, Matas, Tolias. LPOSS: Label Propagation over Patches and Pixels for Open-vocabulary Semantic Segmentation. CVPR 2025.",
+    "file": "segmentation/evaluation/lposs_eval.py",
+    "retrieved_from": "https://raw.githubusercontent.com/vladan-stojnic/LPOSS/4d869a8918b798bf1053cc3aeb527e7aef93f77a/segmentation/evaluation/lposs_eval.py",
+    "upstream_file_sha256": "4a2cafaaecaadcfc6301b38fed278826348ccf09c2f4ecb99b9363dde929be57",
+    "commit": "4d869a8918b798bf1053cc3aeb527e7aef93f77a"
+  },
+  "extracted_module": "scripts/lposs_core_auto.py",
+  "extracted_module_sha256": "d484a437d72e2e6ea017da99a860824355bd94f1bc172efce5773584138a5063",
+  "digest_definition": "SHA-256 over the function's source lines as written; sha256_rstrip is the same text with trailing whitespace stripped (the form our extractor emits, and the form to compare across files).",
+  "functions": {
+    "normalize_connection_graph": {
+      "n_source_lines": 11,
+      "sha256": "0a29a59e66537f7e9869d7220b0a20fb1d390d44e7102ce30516e142b950848c",
+      "sha256_rstrip": "418e76f3f3a60c30b5faf0e7492c34cc08b92b8b7b98d563cce5efef0f9b4439"
+    },
+    "get_lposs_laplacian": {
+      "n_source_lines": 37,
+      "sha256": "7923e3fd4dc1f774a215a61da1600424380ca5b0e3dcea279b249a3000e0bf44",
+      "sha256_rstrip": "feeb57df9bc05036439a5945746e6eb500d09cf27588cad3c4c4888c8ca4caa8"
+    },
+    "dfs_search": {
+      "n_source_lines": 4,
+      "sha256": "59c89100cbe18561e7fde65bd57c925c521c3d84663af6911535b185d673ca5d",
+      "sha256_rstrip": "c7d2f68c9ec87ff6c5b54af81d5db9a071d10319148c241c3026266b545a6b72"
+    },
+    "perform_lp": {
+      "n_source_lines": 9,
+      "sha256": "864c674105967651776975acf99cee7e78ac722de50f83f677998b3d8babc50c",
+      "sha256_rstrip": "58b9e9d5c6fe727fb0f07da610529f7bff3773af078d13cb08c228030f61c0b0"
+    }
+  },
+  "verified_against_upstream": true,
+  "documented_deviations": [
+    {
+      "what": "faiss.knn_gpu -> exact torch top-k",
+      "where": "scripts/pm_stage8_lposs.py (shim applied after import; the extracted module is never edited)",
+      "why": "prebuilt faiss GPU wheels ship no sm_90 kernels, so faiss.knn_gpu raises CUDA error 209 on an H100; faiss-cpu is used for the import only.",
+      "effect": "the shim returns the exact same k nearest neighbours by cosine similarity (torch.topk on the full similarity matrix), i.e. an exact rather than approximate kNN; it is not an algorithmic change to the propagation."
+    },
+    {
+      "what": "logits and affinities come from this paper's cached dense-CLIP (SCLIP-CSA) stack and our five seen/novel splits, not from LPOSS's own pipeline",
+      "where": "scripts/pm_stage8_lposs.py",
+      "why": "the comparison isolates the propagation mechanism under a matched protocol.",
+      "effect": "the reported 15.1 mIoU is NOT LPOSS's published ADE20K number and no claim is made about LPOSS's own full-resolution system."
+    }
+  ],
+  "upstream_functions": {
+    "normalize_connection_graph": {
+      "n_source_lines": 11,
+      "sha256": "0a29a59e66537f7e9869d7220b0a20fb1d390d44e7102ce30516e142b950848c",
+      "sha256_rstrip": "418e76f3f3a60c30b5faf0e7492c34cc08b92b8b7b98d563cce5efef0f9b4439"
+    },
+    "get_lposs_laplacian": {
+      "n_source_lines": 37,
+      "sha256": "7923e3fd4dc1f774a215a61da1600424380ca5b0e3dcea279b249a3000e0bf44",
+      "sha256_rstrip": "feeb57df9bc05036439a5945746e6eb500d09cf27588cad3c4c4888c8ca4caa8"
+    },
+    "dfs_search": {
+      "n_source_lines": 4,
+      "sha256": "59c89100cbe18561e7fde65bd57c925c521c3d84663af6911535b185d673ca5d",
+      "sha256_rstrip": "c7d2f68c9ec87ff6c5b54af81d5db9a071d10319148c241c3026266b545a6b72"
+    },
+    "perform_lp": {
+      "n_source_lines": 9,
+      "sha256": "864c674105967651776975acf99cee7e78ac722de50f83f677998b3d8babc50c",
+      "sha256_rstrip": "58b9e9d5c6fe727fb0f07da610529f7bff3773af078d13cb08c228030f61c0b0"
+    }
+  },
+  "per_function_match": {
+    "normalize_connection_graph": true,
+    "get_lposs_laplacian": true,
+    "dfs_search": true,
+    "perform_lp": true
+  },
+  "per_function_match_raw": {
+    "normalize_connection_graph": true,
+    "get_lposs_laplacian": true,
+    "dfs_search": true,
+    "perform_lp": true
+  }
+}

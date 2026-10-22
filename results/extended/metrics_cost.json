@@ -1,0 +1,28 @@
+{
+ "graph": {
+  "nodes_per_img_mean": 576.0,
+  "knn": 8,
+  "edges_per_img_mean": 4608.2,
+  "n_val_imgs": 2000,
+  "n_train_patches": 341004
+ },
+ "diffusion_gpu_full_val": {
+  "wall_s": 1.76,
+  "peak_gpu_MB": 258.9,
+  "s_per_img": 0.0009
+ },
+ "diffusion_cpu_100imgs": {
+  "wall_s": 1.35,
+  "peak_gpu_MB": 241.8,
+  "s_per_img": 0.0135
+ },
+ "globalT_fit": {
+  "wall_s": 1.49,
+  "peak_gpu_MB": 1475.0
+ },
+ "decoder_train_12ep_1split": {
+  "wall_s": 1.58,
+  "peak_gpu_MB": 346.0
+ },
+ "decoder_params": 169878
+}

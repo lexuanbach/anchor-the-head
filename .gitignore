@@ -1,0 +1,16 @@
+# generated locally by the scripts
+tables/
+results/tables/
+figures/
+cache/
+cache_*/
+coco_cache/
+dcache/
+data/ADEChallengeData2016/
+data/VOCdevkit/
+data/coco/
+SCLIP/
+__pycache__/
+*.pyc
+.venv/
+.DS_Store

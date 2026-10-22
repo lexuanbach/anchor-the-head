@@ -1,0 +1,95 @@
+{
+  "baseline (alpha=0)": {
+    "mIoU": 10.2,
+    "hIoU": 9.9,
+    "seen": 10.4,
+    "novel": 9.5,
+    "ECE": 13.5
+  },
+  "alpha=0.2,k=1": {
+    "mIoU": 10.5,
+    "hIoU": 10.2,
+    "seen": 10.8,
+    "novel": 9.6,
+    "ECE": 8.0
+  },
+  "alpha=0.2,k=2": {
+    "mIoU": 10.5,
+    "hIoU": 10.1,
+    "seen": 10.8,
+    "novel": 9.5,
+    "ECE": 8.4
+  },
+  "alpha=0.2,k=3": {
+    "mIoU": 10.5,
+    "hIoU": 10.1,
+    "seen": 10.7,
+    "novel": 9.6,
+    "ECE": 8.3
+  },
+  "alpha=0.4,k=1": {
+    "mIoU": 10.4,
+    "hIoU": 10.4,
+    "seen": 10.4,
+    "novel": 10.3,
+    "ECE": 2.9
+  },
+  "alpha=0.4,k=2": {
+    "mIoU": 10.5,
+    "hIoU": 10.2,
+    "seen": 10.7,
+    "novel": 9.7,
+    "ECE": 4.2
+  },
+  "alpha=0.4,k=3": {
+    "mIoU": 10.6,
+    "hIoU": 10.4,
+    "seen": 10.7,
+    "novel": 10.2,
+    "ECE": 3.7
+  },
+  "alpha=0.6,k=1": {
+    "mIoU": 9.8,
+    "hIoU": 10.0,
+    "seen": 9.6,
+    "novel": 10.5,
+    "ECE": 1.6
+  },
+  "alpha=0.6,k=2": {
+    "mIoU": 10.7,
+    "hIoU": 10.8,
+    "seen": 10.6,
+    "novel": 11.0,
+    "ECE": 2.2
+  },
+  "alpha=0.6,k=3": {
+    "mIoU": 10.3,
+    "hIoU": 10.5,
+    "seen": 10.1,
+    "novel": 10.9,
+    "ECE": 1.5
+  },
+  "alpha=0.8,k=1": {
+    "mIoU": 8.2,
+    "hIoU": 8.3,
+    "seen": 8.0,
+    "novel": 8.6,
+    "ECE": 3.7
+  },
+  "alpha=0.8,k=2": {
+    "mIoU": 10.7,
+    "hIoU": 10.7,
+    "seen": 10.6,
+    "novel": 10.9,
+    "ECE": 3.6
+  },
+  "alpha=0.8,k=3": {
+    "mIoU": 9.0,
+    "hIoU": 9.1,
+    "seen": 8.8,
+    "novel": 9.4,
+    "ECE": 2.7
+  },
+  "_verdict": "graph diffusion BEATS baseline",
+  "_best": "alpha=0.6,k=2"
+}

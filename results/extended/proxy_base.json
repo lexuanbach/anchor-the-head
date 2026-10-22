@@ -1,0 +1,12 @@
+{
+ "selection": {
+  "replace_t007": 16.93,
+  "replace_t02": 11.25,
+  "mix05_t007": 16.38,
+  "mix05_t02": 14.94,
+  "base": 15.78
+ },
+ "chosen": "replace_t007",
+ "val_mIoU_proxy": 24.27,
+ "val_mIoU_base": 23.04
+}

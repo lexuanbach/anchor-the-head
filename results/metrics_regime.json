@@ -1,0 +1,119 @@
+{
+ "config": {
+  "regime": "training-free dense CLIP ViT-B/16 (SCLIP-CSA)",
+  "novel": 30,
+  "seeds": 5
+ },
+ "summary": {
+  "uncal": {
+   "ECE": {
+    "mean": 27.2,
+    "std": 0.0
+   },
+   "ECE_novel": {
+    "mean": 29.75,
+    "std": 9.25
+   },
+   "ECE_seen": {
+    "mean": 27.6,
+    "std": 1.47
+   },
+   "mIoU": {
+    "mean": 14.46,
+    "std": 0.0
+   },
+   "novelIoU": {
+    "mean": 15.11,
+    "std": 1.03
+   }
+  },
+  "globalT": {
+   "ECE": {
+    "mean": 8.68,
+    "std": 0.73
+   },
+   "ECE_novel": {
+    "mean": 10.04,
+    "std": 3.19
+   },
+   "ECE_seen": {
+    "mean": 8.89,
+    "std": 1.0
+   },
+   "mIoU": {
+    "mean": 14.46,
+    "std": 0.0
+   },
+   "novelIoU": {
+    "mean": 15.11,
+    "std": 1.03
+   }
+  },
+  "perclassT": {
+   "ECE": {
+    "mean": 15.74,
+    "std": 2.66
+   },
+   "ECE_novel": {
+    "mean": 43.73,
+    "std": 4.54
+   },
+   "ECE_seen": {
+    "mean": 9.83,
+    "std": 2.78
+   },
+   "mIoU": {
+    "mean": 4.05,
+    "std": 0.28
+   },
+   "novelIoU": {
+    "mean": 0.0,
+    "std": 0.01
+   }
+  },
+  "diffusion": {
+   "ECE": {
+    "mean": 27.83,
+    "std": 0.0
+   },
+   "ECE_novel": {
+    "mean": 30.56,
+    "std": 9.43
+   },
+   "ECE_seen": {
+    "mean": 28.21,
+    "std": 1.49
+   },
+   "mIoU": {
+    "mean": 14.99,
+    "std": 0.0
+   },
+   "novelIoU": {
+    "mean": 15.72,
+    "std": 1.04
+   }
+  },
+  "decoder": {
+   "ECE": {
+    "mean": 2.81,
+    "std": 2.08
+   },
+   "ECE_novel": {
+    "mean": 31.88,
+    "std": 4.9
+   },
+   "ECE_seen": {
+    "mean": 4.25,
+    "std": 2.71
+   },
+   "mIoU": {
+    "mean": 5.52,
+    "std": 0.26
+   },
+   "novelIoU": {
+    "mean": 0.17,
+    "std": 0.3
+   }
+  }
+ }
+}

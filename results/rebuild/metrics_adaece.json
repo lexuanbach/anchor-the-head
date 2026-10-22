@@ -1,0 +1,17 @@
+{
+ "uncal": {
+  "ECE": 27.2,
+  "ECE_adaptive": 27.2,
+  "ECE_classbal": 27.3
+ },
+ "globalT": {
+  "ECE": 8.7,
+  "ECE_adaptive": 8.7,
+  "ECE_classbal": 17.9
+ },
+ "diffusion": {
+  "ECE": 27.8,
+  "ECE_adaptive": 27.8,
+  "ECE_classbal": 28.4
+ }
+}

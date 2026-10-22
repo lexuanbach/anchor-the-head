@@ -1,0 +1,56 @@
+{
+  "baseline": {
+    "mIoU": 10.2,
+    "hIoU": 9.9,
+    "seenIoU": 10.4,
+    "novelIoU": 9.5,
+    "BF": 71.6,
+    "ECE": 13.5,
+    "unknownF1": 0.0
+  },
+  "full": {
+    "mIoU": 8.9,
+    "hIoU": 3.9,
+    "seenIoU": 10.6,
+    "novelIoU": 2.4,
+    "BF": 71.9,
+    "ECE": 14.4,
+    "unknownF1": 0.0
+  },
+  "no_graph": {
+    "mIoU": 8.4,
+    "hIoU": 3.5,
+    "seenIoU": 10.0,
+    "novelIoU": 2.1,
+    "BF": 72.2,
+    "ECE": 17.5,
+    "unknownF1": 0.0
+  },
+  "no_uncertainty": {
+    "mIoU": 8.4,
+    "hIoU": 3.4,
+    "seenIoU": 10.0,
+    "novelIoU": 2.1,
+    "BF": 71.6,
+    "ECE": 15.9,
+    "unknownF1": 0.0
+  },
+  "fixed_protos": {
+    "mIoU": 6.2,
+    "hIoU": 0.6,
+    "seenIoU": 7.6,
+    "novelIoU": 0.3,
+    "BF": 71.9,
+    "ECE": 20.4,
+    "unknownF1": 0.2
+  },
+  "mask_independent_clip": {
+    "mIoU": 10.2,
+    "hIoU": 9.9,
+    "seenIoU": 10.4,
+    "novelIoU": 9.5,
+    "BF": 71.6,
+    "ECE": 13.5,
+    "unknownF1": 0.0
+  }
+}

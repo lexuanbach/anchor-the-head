@@ -1,0 +1,19 @@
+# ProtoMask-Set dependencies.
+# Tiers A-B (table regeneration + CPU calibration study) need only numpy (+ matplotlib for figures).
+# Tier C (rebuild caches / dense-CLIP / VOC from raw data) additionally needs torch + transformers,
+# and for the dense-CLIP regime the OpenAI `clip` package and the external SCLIP checkout (see MODELS.md).
+# Versions are floors known to work, not exact pins; the original runs used a single H100 environment.
+
+numpy>=1.24
+matplotlib>=3.7          # figures only (calib_ece.png, collapse_law)
+
+# --- Tier C only (GPU) ---
+torch>=2.0
+torchvision>=0.15
+transformers>=4.38       # frozen openai/clip-vit-large-patch14 + facebook/sam-vit-base
+pillow>=9.0
+scipy>=1.10              # boundary edges in cache_features (core.py binary_erosion/dilation)
+
+# dense-CLIP (SCLIP CSA) regime, Tier C:
+#   pip install git+https://github.com/openai/CLIP.git   # provides the `clip` package
+#   git clone the SCLIP repo and point PMX_SCLIP at it    # provides prompts/ + configs/

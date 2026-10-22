@@ -1,0 +1,74 @@
+{
+ "n_points": 38,
+ "n_families": 13,
+ "family_points": {
+  "B1_distill": {
+   "drift": 29.7,
+   "ci": 0.659
+  },
+  "B2_embKD": {
+   "drift": 49.9,
+   "ci": 0.391
+  },
+  "B3_gate": {
+   "drift": 34.2,
+   "ci": 0.442
+  },
+  "B4_winterp": {
+   "drift": 31.5,
+   "ci": 0.376
+  },
+  "B5_episodic": {
+   "drift": 52.9,
+   "ci": 0.04
+  },
+  "C1_balanced": {
+   "drift": 36.3,
+   "ci": 0.001
+  },
+  "C2_objective": {
+   "drift": 58.9,
+   "ci": 0.005
+  },
+  "C3_scale": {
+   "drift": 55.5,
+   "ci": 0.021
+  },
+  "C4_trust": {
+   "drift": 31.4,
+   "ci": 0.546
+  },
+  "C5_breadth": {
+   "drift": 62.6,
+   "ci": 0.061
+  },
+  "C6_purity": {
+   "drift": 57.5,
+   "ci": 0.013
+  },
+  "lposs_head": {
+   "drift": 49.4,
+   "ci": 0.706
+  },
+  "seen_head": {
+   "drift": 56.9,
+   "ci": 0.006
+  }
+ },
+ "r_family_level": -0.647,
+ "r_family_boot95": [
+  -0.95,
+  -0.226
+ ],
+ "r_pointwise": -0.9,
+ "r_cluster_boot95": [
+  -0.959,
+  -0.74
+ ],
+ "proxy_base_within_run": {
+  "source": "results/extended/metrics_align_proxy.json",
+  "n_points": 22,
+  "r_pointwise": -0.934,
+  "note": "Single run on the DINO-proxy base; pointwise only, no family-level or bootstrap statistic is claimed for it."
+ }
+}

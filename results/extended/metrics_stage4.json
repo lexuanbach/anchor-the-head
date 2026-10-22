@@ -1,0 +1,82 @@
+{
+ "summary": {
+  "globalT": {
+   "ECE": {
+    "mean": 8.68,
+    "std": 0.73
+   },
+   "ECE_novel": {
+    "mean": 10.04,
+    "std": 3.17
+   },
+   "mIoU": {
+    "mean": 14.46,
+    "std": 0.0
+   },
+   "novelIoU": {
+    "mean": 15.12,
+    "std": 1.04
+   },
+   "seenIoU": {
+    "mean": 14.3,
+    "std": 0.26
+   },
+   "hIoU": {
+    "mean": 14.67,
+    "std": 0.37
+   }
+  },
+  "perclassT": {
+   "ECE": {
+    "mean": 15.75,
+    "std": 2.63
+   },
+   "ECE_novel": {
+    "mean": 43.78,
+    "std": 4.53
+   },
+   "mIoU": {
+    "mean": 4.06,
+    "std": 0.27
+   },
+   "novelIoU": {
+    "mean": 0.0,
+    "std": 0.0
+   },
+   "seenIoU": {
+    "mean": 5.07,
+    "std": 0.34
+   },
+   "hIoU": {
+    "mean": 0.01,
+    "std": 0.01
+   }
+  },
+  "textcal": {
+   "ECE": {
+    "mean": 18.96,
+    "std": 2.24
+   },
+   "ECE_novel": {
+    "mean": 45.97,
+    "std": 5.39
+   },
+   "mIoU": {
+    "mean": 8.02,
+    "std": 0.62
+   },
+   "novelIoU": {
+    "mean": 1.93,
+    "std": 0.65
+   },
+   "seenIoU": {
+    "mean": 9.55,
+    "std": 0.65
+   },
+   "hIoU": {
+    "mean": 3.18,
+    "std": 0.93
+   }
+  }
+ }
+}

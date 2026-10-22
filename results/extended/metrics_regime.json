@@ -1,0 +1,159 @@
+{
+ "config": {
+  "regime": "training-free dense CLIP ViT-B/16 (SCLIP-CSA)",
+  "novel": 30,
+  "seeds": 5
+ },
+ "summary": {
+  "uncal": {
+   "ECE": {
+    "mean": 27.2,
+    "std": 0.0
+   },
+   "ECE_novel": {
+    "mean": 29.74,
+    "std": 9.24
+   },
+   "ECE_seen": {
+    "mean": 27.6,
+    "std": 1.47
+   },
+   "mIoU": {
+    "mean": 14.46,
+    "std": 0.0
+   },
+   "novelIoU": {
+    "mean": 15.12,
+    "std": 1.04
+   },
+   "seenIoU": {
+    "mean": 14.3,
+    "std": 0.26
+   },
+   "hIoU": {
+    "mean": 14.67,
+    "std": 0.37
+   }
+  },
+  "globalT": {
+   "ECE": {
+    "mean": 8.68,
+    "std": 0.73
+   },
+   "ECE_novel": {
+    "mean": 10.04,
+    "std": 3.17
+   },
+   "ECE_seen": {
+    "mean": 8.89,
+    "std": 1.01
+   },
+   "mIoU": {
+    "mean": 14.46,
+    "std": 0.0
+   },
+   "novelIoU": {
+    "mean": 15.12,
+    "std": 1.04
+   },
+   "seenIoU": {
+    "mean": 14.3,
+    "std": 0.26
+   },
+   "hIoU": {
+    "mean": 14.67,
+    "std": 0.37
+   }
+  },
+  "perclassT": {
+   "ECE": {
+    "mean": 15.75,
+    "std": 2.63
+   },
+   "ECE_novel": {
+    "mean": 43.78,
+    "std": 4.53
+   },
+   "ECE_seen": {
+    "mean": 9.82,
+    "std": 2.8
+   },
+   "mIoU": {
+    "mean": 4.06,
+    "std": 0.27
+   },
+   "novelIoU": {
+    "mean": 0.0,
+    "std": 0.0
+   },
+   "seenIoU": {
+    "mean": 5.07,
+    "std": 0.34
+   },
+   "hIoU": {
+    "mean": 0.01,
+    "std": 0.01
+   }
+  },
+  "diffusion": {
+   "ECE": {
+    "mean": 27.83,
+    "std": 0.0
+   },
+   "ECE_novel": {
+    "mean": 30.55,
+    "std": 9.44
+   },
+   "ECE_seen": {
+    "mean": 28.21,
+    "std": 1.49
+   },
+   "mIoU": {
+    "mean": 14.99,
+    "std": 0.0
+   },
+   "novelIoU": {
+    "mean": 15.71,
+    "std": 1.04
+   },
+   "seenIoU": {
+    "mean": 14.81,
+    "std": 0.26
+   },
+   "hIoU": {
+    "mean": 15.23,
+    "std": 0.37
+   }
+  },
+  "decoder": {
+   "ECE": {
+    "mean": 2.64,
+    "std": 2.24
+   },
+   "ECE_novel": {
+    "mean": 31.65,
+    "std": 5.1
+   },
+   "ECE_seen": {
+    "mean": 4.33,
+    "std": 2.62
+   },
+   "mIoU": {
+    "mean": 5.59,
+    "std": 0.34
+   },
+   "novelIoU": {
+    "mean": 0.15,
+    "std": 0.26
+   },
+   "seenIoU": {
+    "mean": 6.95,
+    "std": 0.38
+   },
+   "hIoU": {
+    "mean": 0.27,
+    "std": 0.47
+   }
+  }
+ }
+}

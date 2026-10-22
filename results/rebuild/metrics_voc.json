@@ -1,0 +1,121 @@
+{
+ "config": {
+  "dataset": "PASCAL VOC2012",
+  "backbone": "training-free dense CLIP ViT-B/16 (SCLIP-CSA)",
+  "NCLS": 20,
+  "NOVEL": 6,
+  "headline_mIoU": 81.8
+ },
+ "summary": {
+  "uncal": {
+   "ECE": {
+    "mean": 43.44,
+    "std": 0.0
+   },
+   "ECE_novel": {
+    "mean": 43.56,
+    "std": 2.01
+   },
+   "ECE_seen": {
+    "mean": 43.41,
+    "std": 0.67
+   },
+   "mIoU": {
+    "mean": 75.31,
+    "std": 0.0
+   },
+   "novelIoU": {
+    "mean": 75.18,
+    "std": 8.03
+   }
+  },
+  "globalT": {
+   "ECE": {
+    "mean": 4.32,
+    "std": 0.35
+   },
+   "ECE_novel": {
+    "mean": 4.25,
+    "std": 0.98
+   },
+   "ECE_seen": {
+    "mean": 4.5,
+    "std": 0.22
+   },
+   "mIoU": {
+    "mean": 75.31,
+    "std": 0.0
+   },
+   "novelIoU": {
+    "mean": 75.18,
+    "std": 8.03
+   }
+  },
+  "perclassT": {
+   "ECE": {
+    "mean": 15.45,
+    "std": 1.31
+   },
+   "ECE_novel": {
+    "mean": 58.81,
+    "std": 7.25
+   },
+   "ECE_seen": {
+    "mean": 1.35,
+    "std": 0.24
+   },
+   "mIoU": {
+    "mean": 43.83,
+    "std": 4.6
+   },
+   "novelIoU": {
+    "mean": 0.0,
+    "std": 0.0
+   }
+  },
+  "diffusion": {
+   "ECE": {
+    "mean": 44.62,
+    "std": 0.0
+   },
+   "ECE_novel": {
+    "mean": 44.86,
+    "std": 2.04
+   },
+   "ECE_seen": {
+    "mean": 44.55,
+    "std": 0.68
+   },
+   "mIoU": {
+    "mean": 77.16,
+    "std": 0.0
+   },
+   "novelIoU": {
+    "mean": 77.09,
+    "std": 8.08
+   }
+  },
+  "decoder": {
+   "ECE": {
+    "mean": 12.54,
+    "std": 1.81
+   },
+   "ECE_novel": {
+    "mean": 17.54,
+    "std": 9.52
+   },
+   "ECE_seen": {
+    "mean": 22.11,
+    "std": 0.67
+   },
+   "mIoU": {
+    "mean": 51.41,
+    "std": 1.7
+   },
+   "novelIoU": {
+    "mean": 15.42,
+    "std": 5.51
+   }
+  }
+ }
+}

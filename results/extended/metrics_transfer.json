@@ -1,0 +1,55 @@
+{
+ "config": {
+  "fit": "COCO-Stuff-171 (val2017 patches, stage9a)",
+  "eval": "ADE20K-150 val",
+  "n_ade": 2000,
+  "n_coco": 600,
+  "LS": 40.0,
+  "epochs": 12
+ },
+ "summary": {
+  "baseline": {
+   "mIoU": 14.461484551429749,
+   "ECE": 27.20287021720651,
+   "acc": 35.391345620155334,
+   "drift": 7.138110547089127e-07
+  },
+  "globalT_coco": {
+   "mIoU": 14.461484551429749,
+   "ECE": 8.397712578516803,
+   "acc": 35.391345620155334,
+   "drift": 13.72726708650589,
+   "fit_T": 0.503
+  },
+  "textcal_coco": {
+   "mIoU": 14.257913827896118,
+   "ECE": 6.456237791280728,
+   "acc": 43.13677251338959,
+   "drift": 33.77150297164917
+  },
+  "embhead_coco_lam0.0": {
+   "mIoU": 14.943544566631317,
+   "ECE": 4.606445125500613,
+   "acc": 56.42971396446228,
+   "drift": 46.09116017818451
+  },
+  "embhead_coco_lam1.0": {
+   "mIoU": 15.62306433916092,
+   "ECE": 8.897958195302635,
+   "acc": 55.775874853134155,
+   "drift": 41.587260365486145
+  },
+  "diffusion": {
+   "mIoU": 14.991462230682373,
+   "ECE": 27.828452317965002,
+   "acc": 35.92885136604309,
+   "drift": 0.19681199919432402
+  },
+  "perclassT_coco": {
+   "note": "STRUCTURALLY INAPPLICABLE: 171 per-class temperatures are indexed by COCO-Stuff classes and cannot be transported to the ADE vocabulary"
+  },
+  "logit_head_coco": {
+   "note": "STRUCTURALLY INAPPLICABLE: residual head outputs 171 COCO logits"
+  }
+ }
+}
