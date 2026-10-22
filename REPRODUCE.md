@@ -24,8 +24,8 @@ python scripts/dump_splits.py
 ## Tier A: regenerate from result records (no dataset or GPU)
 
 ```bash
-python scripts/finalize_tables.py       # results/tables/: Tables 1, S2, S4
-python scripts/finalize_ext_tables.py   # tables/: Tables 2, 4, 5, S6-S10
+python scripts/finalize_tables.py       # results/tables/: Tables 2, S2, S4
+python scripts/finalize_ext_tables.py   # tables/: Tables 3, 5, 6, S6-S10
 python scripts/make_calib_fig.py
 python scripts/make_ext_figs.py
 python scripts/drift_grouped_stats.py
@@ -34,7 +34,7 @@ python scripts/repro_deviation.py
 
 These commands need numpy and, for plots, matplotlib. The manuscript has shorter captions and
 layout adjustments, so numerical regeneration does not imply byte-identical LaTeX. S1 and S3
-are written by the cache-based calibration script. Table 3 (VOC) and S5 (encoder comparison)
+are written by the cache-based calibration script. Main Table 1 summarizes evaluation protocols and is maintained in the manuscript. Table 4 (VOC) and S5 (encoder comparison)
 are transcribed from their JSONs. `results/manifest.json` maps every result table and figure.
 The protocol and claims tables summarize multiple records rather than individual runs.
 

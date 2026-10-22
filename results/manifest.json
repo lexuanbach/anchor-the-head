@@ -135,6 +135,14 @@
         "extended/mc_metrics_protomask.json"
       ],
       "mode": "manuscript evidence summary"
+    },
+    "tab_protocol_main": {
+      "source_json": [
+        "metrics_diffuse.json",
+        "metrics_voc.json",
+        "extended/metrics_regime.json"
+      ],
+      "mode": "main-paper protocol summary, main result tables only"
     }
   },
   "figures": {
